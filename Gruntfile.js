@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         reporter:'Spec'                      
       }    
     },
-  
+   //代码压缩构建
     htmlmin: {
       options: {
         collapseWhitespace: true,
