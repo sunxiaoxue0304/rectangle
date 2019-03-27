@@ -21,7 +21,7 @@ module.exports = function (grunt) {
       },
       src: '*.html'    
     },
-
+    //添加单元测试代码 mocha chai
     mocha:{
       test:{
         src:['text/index.html'],               
