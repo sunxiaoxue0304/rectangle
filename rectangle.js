@@ -31,7 +31,7 @@ $(function() {
           }
     });
 
-        $btnCal.click(function(){
+    $btnCal.click(function(){
           if(!isPassValidate) return;
           var w = $width.val(),
               h = $height.val();
@@ -40,5 +40,24 @@ $(function() {
           $area.val(r.area());
               
     });
+
+
+    function validate(field){
+      var $data = $(field),
+          $message = $(field + '-validate'),
+          label = $(field).attr('data-label');
+      if(!/^-?(0|[1-9]\d*)(\.\d)?([eE][+-]?\d+)?$/.test($data.val())){
+        $message.html(label+'必须是数值');
+        $data.select();
+        result false;
+      }
+      if(window.Number($data.val())<0){
+        $message.html(label+'必须大于0');
+        $data.select();
+        return false;
+      }
+      $message.html('');
+      return true;
+    }
 
 });
